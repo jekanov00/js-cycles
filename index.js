@@ -29,9 +29,26 @@ document.write('<h3>2. Пользователь ввел число, а на э�
 const userInputThird1 = Number(prompt('3. Enter a number'));
 const userInputThird2 = Number(prompt('3. Enter a power for the number'));
 
-const thirdResult = Math.pow(userInputThird1, userInputThird2);
+let result3 = userInputThird1;
+let i = userInputThird2;
 
-document.write('<h3>3. Запросить число и степень. Возвести число в указанную степень и вывести результат.</h3><p>' + thirdResult + '</p>');
+if (userInputThird2 > 0) {
+  while (i >= 2) {
+    result3 *= userInputThird1;
+    --i;
+  }
+} else if (userInputThird2 === 0) {
+  result3 = 1;
+} else if (userInputThird2 < 0) {
+  i = Math.abs(i);
+  while (i >= 2) {
+    result3 *= userInputThird1;
+    --i;
+  }
+  result3 = 1 / result3;
+}
+
+document.write('<h3>3. Запросить число и степень. Возвести число в указанную степень и вывести результат.</h3><p>' + result3 + '</p>');
 
 // 4.
 
@@ -40,7 +57,7 @@ document.write('<h3>4. Запросить 2 числа и найти все об
 const userInputFourth1 = Number(prompt('4. Enter first number:'));
 const userInputFourth2 = Number(prompt('4. Enter second number:'));
 
-let i = 0;
+i = 0;
 while (i <= userInputFourth1 && i <= userInputFourth2) {
   if (userInputFourth1 % i === 0) {
     if (userInputFourth2 % i === 0) {
@@ -71,3 +88,31 @@ if (userInputFifth >= 0) {
 } else {
   document.write('<p>Wrong input</p>');
 }
+
+// Do While
+document.write('<h1>Do While</h1>');
+
+// 1.
+
+document.write('<h3>1. Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.</h3>');
+
+let userInputSixth;
+do {
+  userInputSixth = Number(prompt('Enter the result of "2 + 2 * 2":'));
+} while (userInputSixth !== 2 + 2 * 2);
+
+document.write('<p>' + userInputSixth + '</p>');
+
+// 2.
+
+document.write('<h3> 2. Делить число 1000 на 2 до тех пор, пока не получится число меньше 50. Вывести это число и сколько делений произвели.</h3>');
+
+let result7 = 1000;
+let count7 = 0;
+
+do {
+  result7 /= 2;
+  ++count7;
+} while (result7 >= 50);
+
+document.write('<p>' + result7 + ', ' + count7 + '</p>');

@@ -98,7 +98,7 @@ document.write('<h3>1. Предлагать пользователю решит�
 
 let userInputSixth;
 do {
-  userInputSixth = Number(prompt('Enter the result of "2 + 2 * 2":'));
+  userInputSixth = Number(prompt('1. Enter the result of "2 + 2 * 2":'));
 } while (userInputSixth !== 2 + 2 * 2);
 
 document.write('<p>' + userInputSixth + '</p>');
@@ -116,3 +116,20 @@ do {
 } while (result7 >= 50);
 
 document.write('<p>' + result7 + ', ' + count7 + '</p>');
+
+// For
+document.write('<h1>For</h1>');
+
+// 1.
+
+document.write('<h3>1. Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.</h3><p>');
+
+const userInputEighth = Number(prompt('1. Enter a number:'));
+
+for (let i = 1; i <= userInputEighth && i <= 100; i++) {
+  if (userInputEighth % i === 0) {
+    document.write(i + ' ');
+  }
+}
+
+document.write('</p>');
